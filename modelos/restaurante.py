@@ -71,3 +71,43 @@ print(vars(restaurante_pizza))
 print(vars(restaurante_praca))
 
 
+# CORREÇÃO
+#  - QUESTÃO 1
+restaurante_praca.categoria ='Italiana'
+print(restaurante_praca.categoria)
+print('')
+#  - QUESTÃO 2
+nome_restaurante = restaurante_praca.nome
+print(nome_restaurante)
+print('')
+#  - QUESTÃO 3
+if restaurante_praca.ativo:
+    print('O restaurante está ativo')
+else:
+    print('O restaurante está inativo')    
+print('')    
+#  - QUESTÃO 4
+categoria = Restaurante.categoria
+print(categoria)  
+print('')  
+#  - QUESTÃO 5
+restaurante_praca.nome = 'Bistrô'
+print(restaurante_praca.nome)
+print('')
+#  - QUESTÃO 6
+restaurante_pizza.nome = 'Pizza Place'
+restaurante_pizza.categoria = 'Fast Food'
+print(vars(restaurante_pizza))
+print('')
+#  - QUESTÃO 7
+if restaurante_pizza.categoria == 'Fast Food':
+    print('A categoria é Fast Food')
+else:
+    print('A categoria não é Fast Food')
+print('')    
+#  - QUESTÃO 8
+restaurante_pizza.ativo = True
+print(restaurante_pizza.ativo)
+print('')
+#  - QUESTÃO 9
+print(f'Nome: {restaurante_praca.nome} e Categoria: {restaurante_praca.categoria}')
