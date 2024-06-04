@@ -37,10 +37,12 @@ class Restaurante:
 
     restaurantes=[]
 
-    def __init__(self,nome,categoria):
+    def __init__(self,nome,categoria, ano_criacao,localidade):
         self.nome=nome
         self.categoria=categoria
         self.ativo=False
+        self.ano_criacao=ano_criacao
+        self.localidade=localidade
 
         Restaurante.restaurantes.append(self)
 
@@ -49,9 +51,9 @@ class Restaurante:
 
     def listar_restaurante():
         for restaurante in Restaurante.restaurantes:
-            print(f'{restaurante.nome} | {restaurante.categoria} | {restaurante.ativo}')
+            print(f'{restaurante.nome} | {restaurante.categoria} | {restaurante.ativo} | {restaurante.ano_criacao} | {restaurante.localidade}')
 
-restaurante_Dionisio=Restaurante('Dionisio', 'Frutos do Mar')
+restaurante_Dionisio=Restaurante('Dionisio', 'Frutos do Mar', '1988', 'Batel')
 
 print(restaurante_Dionisio)
 Restaurante.listar_restaurante()
