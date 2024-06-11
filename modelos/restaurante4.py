@@ -34,7 +34,8 @@ class Restaurante:
         print('1. Cadastrar restaurante')
         print('2. Listar restaurantes')
         print('3. Alterar estado do restaurante')
-        print('4. Sair\n')
+        print('4. Avaliar restaurante')
+        print('5. Sair\n')
     
     def voltar_menu_principal():
         input('Digite uma tecla para voltar ao menu principal')
@@ -52,8 +53,28 @@ class Restaurante:
         # criar formato do dicionário pra daí apendar
         # dados_do_restaurante = {nome_do_restaurante,categoria}
         dados_do_restaurante = Restaurante(nome_do_restaurante,categoria)
+        dados_do_restaurante
         print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!')
         Restaurante.voltar_menu_principal()    
+
+    def cadastrar_avaliacao():
+        Restaurante.exibir_subtitulo('CADASTRO DE AVALIAÇÕES')
+
+        nome_do_restaurante = input('Digite o nome do restaurante que você quer cadastrar a avaliação: ')
+    
+        for restaurante in Restaurante.restaurantes:
+            if nome_do_restaurante == restaurante._nome:
+                nota_avaliacao = float(input(f'Digite um número de 0 a 10 que deseja avaliar o restaurante {nome_do_restaurante}: '))
+                restaurante.receber_avaliacao(None, nota_avaliacao)  # Assuming you haven't implemented 'cliente' yet
+                mensagem = f'Avaliação adicionada ao restaurante {nome_do_restaurante} com sucesso.'
+                print(mensagem)
+                break
+        else:
+            print(f'O restaurante {nome_do_restaurante} não foi encontrado')
+
+        Restaurante.voltar_menu_principal()
+
+
 
     @classmethod
     def listar_restaurantes(cls):
@@ -127,6 +148,8 @@ class Restaurante:
             elif opcao_escolhida==3:
                 # print('ativar restaurante')
                 Restaurante.alternar_estado()
+            elif opcao_escolhida==4:
+                Restaurante.cadastrar_avaliacao()    
             else:
                 Restaurante.finalizar_app()
         except:
