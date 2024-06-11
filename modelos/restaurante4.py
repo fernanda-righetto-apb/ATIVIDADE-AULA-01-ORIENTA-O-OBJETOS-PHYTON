@@ -57,7 +57,7 @@ class Restaurante:
         print(f'O restaurante {nome_do_restaurante} foi cadastrado com sucesso!')
         Restaurante.voltar_menu_principal()    
 
-    def cadastrar_avaliacao():
+    def registrar_avaliacao():
         Restaurante.exibir_subtitulo('CADASTRO DE AVALIAÇÕES')
 
         nome_do_restaurante = input('Digite o nome do restaurante que você quer cadastrar a avaliação: ')
@@ -149,7 +149,7 @@ class Restaurante:
                 # print('ativar restaurante')
                 Restaurante.alternar_estado()
             elif opcao_escolhida==4:
-                Restaurante.cadastrar_avaliacao()    
+                Restaurante.registrar_avaliacao()    
             else:
                 Restaurante.finalizar_app()
         except:
